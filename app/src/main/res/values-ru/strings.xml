@@ -51,6 +51,7 @@
   <string name="msg_packages">%1$d разрешен, %2$d заблокирован</string>
   <string name="msg_disabled">NetGuard отключен, используйте переключатель выше для включения</string>
   <string name="msg_revoked">NetGuard был отключен, скорее всего, из-за применения другого VPN-подключения</string>
+  <string name="msg_installed">\'%1$s\' installed</string>
   <string name="msg_completed">Действие завершено</string>
   <string name="msg_vpn">NetGuard использует локальный VPN, чтобы блокировать интернет трафик.
 По этой причине, пожалуйста, разрешите VPN-подключение в следующем диалоговом окне.
@@ -59,6 +60,7 @@ NetGuard не имеет разрешения доступа в интернет
   <string name="msg_voluntary">Пожертвования являются абсолютно добровольными и не добавляют никаких возможностей в программу. Пожертвования предназначены сугубо для того, чтобы выразить вашу признательность за проделанную работу.</string>
   <string name="msg_terms">Делая пожертвование, Вы соглашаетесь с <a href="http://www.netguard.me/#terms">условиями &amp; положениями</a></string>
   <string name="msg_dimming">Если вам не удается нажать ОК в следующем диалоговом окне (затемнение экрана), то, скорее всего, какое то другое приложение использует экран.</string>
+  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Разрешить Wi-Fi при включенном экране</string>
@@ -70,4 +72,6 @@ NetGuard не имеет разрешения доступа в интернет
   <string name="title_donate">Пожертвовать</string>
   <string name="title_rate">Оценить</string>
   <string name="title_thanks">Благодарим Вас за ваше пожертвование!</string>
+  <string name="title_allow">Allow</string>
+  <string name="title_block">Block</string>
 </resources>

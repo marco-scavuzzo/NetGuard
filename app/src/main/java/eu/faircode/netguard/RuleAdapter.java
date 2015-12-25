@@ -33,6 +33,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -52,10 +53,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder> implements Filterable {
@@ -433,14 +431,10 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder> im
         });
 
         // Traffic statistics
-        holder.tvStatistics.setVisibility(debuggable ? View.VISIBLE : View.GONE);
-        if (debuggable)
-            holder.tvStatistics.setText(context.getString(R.string.msg_traffic,
-                    TrafficStats.getUidTxBytes(rule.info.applicationInfo.uid) / 1024f,
-                    TrafficStats.getUidRxBytes(rule.info.applicationInfo.uid) / 1024f,
-                    SimpleDateFormat.getDateTimeInstance(SimpleDateFormat.SHORT, SimpleDateFormat.SHORT)
-                            .format(new Date(System.currentTimeMillis() - SystemClock.elapsedRealtime()))
-            ));
+        holder.tvStatistics.setText(context.getString(R.string.msg_kbday,
+                TrafficStats.getUidTxBytes(rule.info.applicationInfo.uid) / 1024f * 24 * 3600 * 1000L / SystemClock.elapsedRealtime(),
+                TrafficStats.getUidRxBytes(rule.info.applicationInfo.uid) / 1024f * 24 * 3600 * 1000L / SystemClock.elapsedRealtime()
+        ));
     }
 
     private void updateRule(Rule rule, String network, boolean blocked) {
@@ -467,6 +461,8 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder> im
                 prefs.edit().putBoolean(rule.info.packageName, blocked).apply();
             }
         }
+
+        NotificationManagerCompat.from(context).cancel(rule.info.applicationInfo.uid);
     }
 
     private void updateScreenWifi(Rule rule, boolean enabled) {

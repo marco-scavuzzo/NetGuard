@@ -54,6 +54,7 @@ Ceci est causé par des bugs dans Android, ou dans le logiciel fourni par le con
   <string name="msg_packages">%1$d autorisée(s), %2$d bloquée(s)</string>
   <string name="msg_disabled">NetGuard est désactivé, utilisez le bouton ci-dessus pour activer NetGuard</string>
   <string name="msg_revoked">NetGuard a été désactivé, probablement en utilisant une autre application VPN</string>
+  <string name="msg_installed">\'%1$s\' installed</string>
   <string name="msg_completed">Action réalisée</string>
   <string name="msg_vpn">NetGuard utilise un VPN local comme un gouffre pour bloquer le trafic internet.
 Pour cette raison, veuillez autoriser une connexion VPN dans la fenêtre suivante.
@@ -63,6 +64,7 @@ Netguard n\'a pas accès a internet, vous savez que votre trafic internet n\'est
 Faire un don est une de façon de montrer votre soutien au développeur et votre appréciation pour le travail accompli.</string>
   <string name="msg_terms">En faisant un don vous acceptez les <a href="http://www.netguard.me/#terms">termes et conditions</a></string>
   <string name="msg_dimming">Si vous ne pouvez pas appuyer sur OK dans la fenêtre suivante, une autre application (filtre de luminosité) manipule probablement l\'écran.</string>
+  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Autoriser Wi-Fi si écran allumé</string>
@@ -74,4 +76,6 @@ Faire un don est une de façon de montrer votre soutien au développeur et votre
   <string name="title_donate">Faire un don</string>
   <string name="title_rate">Évaluer</string>
   <string name="title_thanks">Merci pour votre don !</string>
+  <string name="title_allow">Allow</string>
+  <string name="title_block">Block</string>
 </resources>

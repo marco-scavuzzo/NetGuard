@@ -54,6 +54,7 @@ Je to spôsobené chybami v Androide alebo v softvéri poskytovanom výrobcom, p
   <string name="msg_packages">Povolené: %1$d, blokované: %2$d</string>
   <string name="msg_disabled">NetGuard je vypnutý, použite prepínač vyššie na zapnutie NetGuard</string>
   <string name="msg_revoked">NetGuard has been disabled, likely by using another VPN based application</string>
+  <string name="msg_installed">\'%1$s\' installed</string>
   <string name="msg_completed">Akcia bola dokončená</string>
   <string name="msg_vpn">NetGuard používa lokálnu VPN sieť na zablokovanie sieťovej prevádzky,
 a preto by ste mali povoliť VPN pripojenie v ďalšom okne.
@@ -62,6 +63,7 @@ Keďže NetGuard nemá internetové povolenie, vaša sieťová prevádzka nemô�
   <string name="msg_voluntary">Dary sú úplne dobrovoľné a neodomknú žiadne funkcie. Dary sú určené ako spôsob, akým možete prejaviť vašu vďačnosť za vykonanú prácu.</string>
   <string name="msg_terms">By donating you agree to the <a href="http://www.netguard.me/#terms">terms &amp; conditions</a></string>
   <string name="msg_dimming">Ak nemôžete stlačiť tlačidlo OK na ďalšom okne, tak iná aplikácia (na ovladanie jasu) prekrýva obrazovkou.</string>
+  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Allow Wi-Fi when screen is on</string>
@@ -73,4 +75,6 @@ Keďže NetGuard nemá internetové povolenie, vaša sieťová prevádzka nemô�
   <string name="title_donate">Prispieť</string>
   <string name="title_rate">Ohodnotiť</string>
   <string name="title_thanks">Ďakujeme vám za váš príspevok!</string>
+  <string name="title_allow">Allow</string>
+  <string name="title_block">Block</string>
 </resources>

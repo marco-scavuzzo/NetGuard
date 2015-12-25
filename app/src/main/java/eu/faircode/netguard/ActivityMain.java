@@ -191,6 +191,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                SinkholeService.reload(null, "pull", ActivityMain.this);
                 updateApplicationList();
             }
         });
@@ -357,13 +358,16 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             Util.logExtras(intent);
 
             if (adapter != null)
-                if (intent.getBooleanExtra("connected", false))
-                    if (intent.getBooleanExtra("metered", false))
-                        adapter.setMobileActive();
+                if (intent.hasExtra("connected") && intent.hasExtra("metered"))
+                    if (intent.getBooleanExtra("connected", false))
+                        if (intent.getBooleanExtra("metered", false))
+                            adapter.setMobileActive();
+                        else
+                            adapter.setWifiActive();
                     else
-                        adapter.setWifiActive();
+                        adapter.setDisconnected();
                 else
-                    adapter.setDisconnected();
+                    updateApplicationList();
         }
     };
 
