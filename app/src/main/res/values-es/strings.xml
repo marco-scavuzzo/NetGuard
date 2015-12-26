@@ -10,6 +10,9 @@ NetGuard puede dar un fallo al activarse en algunos dispositivos. Es posible tam
 Estos problemas son causados por errores en Android, o en el software provisto por el fabricante, así que por favor no culpes a NetGuard.
 \n\nAl utilizar NetGuard, estás aceptando la <a href="http://www.gnu.org/licenses/gpl.txt">Licencia Pública GNU General Public versión 3</a></string>
   <string name="menu_search">Buscar aplicación</string>
+  <string name="menu_filter">Filter applications</string>
+  <string name="menu_app_user">Show user applications</string>
+  <string name="menu_app_system">Show system applications</string>
   <string name="menu_settings">Configuración</string>
   <string name="menu_invite">Invitar</string>
   <string name="menu_support">Soporte</string>
@@ -63,7 +66,7 @@ Puesto que NetGuard no tiene permisos de internet, ya sabes que tu tráfico de i
   <string name="msg_voluntary">Las donaciones son completamente voluntarias y no desbloquean ninguna funcionalidad. Las donaciones son una forma de mostrar tu apreciación por el trabajo hecho.</string>
   <string name="msg_terms">Al donar aceptas los <a href="http://www.netguard.me/#terms"> términos y condiciones</a></string>
   <string name="msg_dimming">Si no puedes pulsar OK en el próximo diálogo, otra aplicación (de atenuación de pantalla) probablemente esté manipulando la pantalla.</string>
-  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
+  <string name="msg_mbday">± %1$.3f▲ %2$.3f▼ MB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Permitir Wi-Fi cuando la pantalla está encendida</string>

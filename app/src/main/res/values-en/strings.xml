@@ -10,6 +10,9 @@ NetGuard is known to crash when activated on some devices. It is also known to b
 These issues are caused by bugs in Android, or in the software provided by the manufacturer, so please don\'t blame NetGuard.
 \n\nBy using NetGuard, you agree to the <a href="http://www.gnu.org/licenses/gpl.txt">GNU General Public License version 3</a></string>
   <string name="menu_search">Search for application</string>
+  <string name="menu_filter">Filter applications</string>
+  <string name="menu_app_user">Show user applications</string>
+  <string name="menu_app_system">Show system applications</string>
   <string name="menu_settings">Settings</string>
   <string name="menu_invite">Invite</string>
   <string name="menu_support">Support</string>
@@ -63,7 +66,7 @@ Since NetGuard has no internet permission, you know your internet traffic is not
   <string name="msg_voluntary">Donations are completely voluntary and do not unlock any feature. Donations are meant as a way to show your appreciation for the work done.</string>
   <string name="msg_terms">By donating you agree to the <a href="http://www.netguard.me/#terms">terms &amp; conditions</a></string>
   <string name="msg_dimming">If you cannot press OK in the next dialog, another (screen dimming) application is likely manipulating the screen.</string>
-  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
+  <string name="msg_mbday">± %1$.3f▲ %2$.3f▼ MB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Allow Wi-Fi when screen is on</string>

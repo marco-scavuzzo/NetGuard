@@ -10,6 +10,9 @@ Pri aktivácii NetGuard dochádza k pádu aplikácie alebo sa blokuje všetka si
 Je to spôsobené chybami v Androide alebo v softvéri poskytovanom výrobcom, preto sa nesťažujte kvôli tomu na NetGuard.
 \n\nPoužívaním aplikácie NetGuard súhlasíte so <a href="http://www.gnu.org/licenses/gpl.txt">Všeobecnou verejnou licenciou GNU, verzia 3</a></string>
   <string name="menu_search">Hľadať aplikáciu</string>
+  <string name="menu_filter">Filter applications</string>
+  <string name="menu_app_user">Show user applications</string>
+  <string name="menu_app_system">Show system applications</string>
   <string name="menu_settings">Nastavenia</string>
   <string name="menu_invite">Pozvať</string>
   <string name="menu_support">Podpora</string>
@@ -63,7 +66,7 @@ Keďže NetGuard nemá internetové povolenie, vaša sieťová prevádzka nemô�
   <string name="msg_voluntary">Dary sú úplne dobrovoľné a neodomknú žiadne funkcie. Dary sú určené ako spôsob, akým možete prejaviť vašu vďačnosť za vykonanú prácu.</string>
   <string name="msg_terms">By donating you agree to the <a href="http://www.netguard.me/#terms">terms &amp; conditions</a></string>
   <string name="msg_dimming">Ak nemôžete stlačiť tlačidlo OK na ďalšom okne, tak iná aplikácia (na ovladanie jasu) prekrýva obrazovkou.</string>
-  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
+  <string name="msg_mbday">± %1$.3f▲ %2$.3f▼ MB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Allow Wi-Fi when screen is on</string>

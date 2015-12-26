@@ -7,6 +7,9 @@
   <string name="app_first">Были приложены большие усилия для разработки и тестирования NetGuard, однако невозможно гарантировать, что оно будет корректно работать на любом устройстве. NetGuard известен сбой при активации на некоторых устройствах. Известно также, что блокируется весь трафик на некоторых устройствах. Эти проблемы вызваны ошибками в Android, или в программном обеспечении, поставляемом изготовителем, поэтому, пожалуйста, не вините NetGuard.
 \n\nИспользуя NetGuard, вы принимаете <a href="http://www.gnu.org/licenses/gpl.txt">Открытое лицензионное соглашение GNU версии 3</a></string>
   <string name="menu_search">Поиск приложения</string>
+  <string name="menu_filter">Filter applications</string>
+  <string name="menu_app_user">Show user applications</string>
+  <string name="menu_app_system">Show system applications</string>
   <string name="menu_settings">Настройки</string>
   <string name="menu_invite">Пригласить</string>
   <string name="menu_support">Поддержка</string>
@@ -60,7 +63,7 @@ NetGuard не имеет разрешения доступа в интернет
   <string name="msg_voluntary">Пожертвования являются абсолютно добровольными и не добавляют никаких возможностей в программу. Пожертвования предназначены сугубо для того, чтобы выразить вашу признательность за проделанную работу.</string>
   <string name="msg_terms">Делая пожертвование, Вы соглашаетесь с <a href="http://www.netguard.me/#terms">условиями &amp; положениями</a></string>
   <string name="msg_dimming">Если вам не удается нажать ОК в следующем диалоговом окне (затемнение экрана), то, скорее всего, какое то другое приложение использует экран.</string>
-  <string name="msg_kbday">± %1$1.0f▲ %2$1.0f▼ KB/day</string>
+  <string name="msg_mbday">± %1$.3f▲ %2$.3f▼ MB/day</string>
   <string name="msg_kbsec">%7.3f KB/s</string>
   <string name="msg_mbsec">%7.3f MB/s</string>
   <string name="title_screen_wifi">Разрешить Wi-Fi при включенном экране</string>
