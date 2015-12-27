@@ -73,10 +73,7 @@ import javax.xml.parsers.SAXParserFactory;
 public class ActivitySettings extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Settings";
 
-    private boolean pro = false;
     private boolean phone_state = false;
-
-    public static final String EXTRA_PRO = "Pro";
 
     private static final int REQUEST_EXPORT = 1;
     private static final int REQUEST_IMPORT = 2;
@@ -90,8 +87,6 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
         setTheme(prefs.getBoolean("dark_theme", false) ? R.style.AppThemeDark : R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
-
-        pro = getIntent().getBooleanExtra(EXTRA_PRO, false);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content, new FragmentSettings()).commit();
         getSupportActionBar().setTitle(R.string.menu_settings);
@@ -145,10 +140,7 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
         pref_export.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                if (pro)
-                    startActivityForResult(getIntentCreateDocument(), ActivitySettings.REQUEST_EXPORT);
-                else
-                    Toast.makeText(ActivitySettings.this, getString(R.string.msg_pro), Toast.LENGTH_SHORT).show();
+                startActivityForResult(getIntentCreateDocument(), ActivitySettings.REQUEST_EXPORT);
                 return true;
             }
         });
@@ -159,10 +151,7 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
         pref_import.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                if (pro)
-                    startActivityForResult(getIntentOpenDocument(), ActivitySettings.REQUEST_IMPORT);
-                else
-                    Toast.makeText(ActivitySettings.this, getString(R.string.msg_pro), Toast.LENGTH_SHORT).show();
+                startActivityForResult(getIntentOpenDocument(), ActivitySettings.REQUEST_IMPORT);
                 return true;
             }
         });
@@ -302,7 +291,6 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
                     requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_ROAMING_INTERNATIONAL);
             } else
                 SinkholeService.reload("other", "setting changed", this);
-
         } else if ("manage_system".equals(name)) {
             SharedPreferences.Editor editor = prefs.edit();
             if (prefs.getBoolean(name, false)) {
@@ -315,22 +303,13 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
             editor.apply();
             SinkholeService.reload(null, "setting changed", this);
 
-        } else if ("auto_enable".equals(name)) {
-            if (!pro) {
-                prefs.edit().putString(name, "0").apply();
-                Toast.makeText(ActivitySettings.this, getString(R.string.msg_pro), Toast.LENGTH_SHORT).show();
-            }
+        } else if ("auto_enable".equals(name))
             getPreferenceScreen().findPreference(name).setTitle(getString(R.string.setting_auto, prefs.getString(name, "0")));
 
-        } else if ("dark_theme".equals(name)) {
-            if (!pro) {
-                prefs.edit().putBoolean(name, false);
-                ((SwitchPreference) getPreferenceScreen().findPreference(name)).setChecked(false);
-                Toast.makeText(ActivitySettings.this, getString(R.string.msg_pro), Toast.LENGTH_SHORT).show();
-            }
+        else if ("dark_theme".equals(name))
             recreate();
 
-        } else if ("wifi_homes".equals(name)) {
+        else if ("wifi_homes".equals(name)) {
             MultiSelectListPreference pref_wifi_homes = (MultiSelectListPreference) getPreferenceScreen().findPreference(name);
             Set<String> ssid = prefs.getStringSet(name, new HashSet<String>());
             if (ssid.size() > 0)
@@ -363,13 +342,8 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
                 SinkholeService.reload("other", "setting changed", this);
 
         } else if ("show_stats".equals(name)) {
-            if (pro)
+            if (!Util.isPlayStoreInstall(this))
                 SinkholeService.reloadStats("setting changed", this);
-            else {
-                prefs.edit().putBoolean(name, false);
-                ((SwitchPreference) getPreferenceScreen().findPreference(name)).setChecked(false);
-                Toast.makeText(ActivitySettings.this, getString(R.string.msg_pro), Toast.LENGTH_SHORT).show();
-            }
 
         } else if ("stats_base".equals(name)) {
             if (!Util.isPlayStoreInstall(this))
@@ -386,8 +360,7 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         PreferenceScreen screen = getPreferenceScreen();
 
         if (requestCode == REQUEST_METERED)
